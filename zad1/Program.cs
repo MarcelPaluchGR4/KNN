@@ -1,4 +1,16 @@
-﻿class KNN
+﻿class DataRow
+{
+    public double[] Numbers;
+    public string Category;
+
+    public DataRow(double[] n, string c)
+    {
+        Numbers = n;
+        Category = c;
+    }
+}
+
+class KNN
 {
     public string DistanceType;
 
@@ -26,4 +38,6 @@
             return sum;
         }
     }
+
+
 }
