@@ -41,3 +41,35 @@ class KNN
 
 
 }
+
+
+class Program
+{
+    static void Main()
+    {
+        var loaded = ReadCsv("/home/mp/python_projects/knn/training_data.csv");
+    }
+
+    static List<DataRow> ReadCsv(string filename)
+    {
+        var rows = new List<DataRow>();
+        var stuff = File.ReadAllLines(filename);
+
+        foreach (var line in stuff)
+        {
+            var bits = line.Split(',');
+            if (bits.Length != 5) continue;
+
+            double[] nums = new double[4];
+            for (int i = 0; i < 4; i++)
+            {
+                nums[i] = double.Parse(bits[i]);
+            }
+
+            string type = bits[4];
+            rows.Add(new DataRow(nums, type));
+        }
+
+        return rows;
+    }
+}
