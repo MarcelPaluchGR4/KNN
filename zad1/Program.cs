@@ -104,7 +104,7 @@ class Program
 {
     static void Main()
     {
-        var loaded = ReadCsv("/home/mp/python_projects/knn/training_data.csv");
+        var loaded = ReadCsv("training_data/training_data.csv");
         KNN model = new KNN(3, "manhattan");
         model.AddTrainingData(loaded);
 
